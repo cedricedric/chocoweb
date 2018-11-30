@@ -5,7 +5,7 @@
 </head>
 <body>
 
-     <?php include('views/preloader.php'); 
+     <?php //include('views/preloader.php');
 
       include('views/nav.php'); 
 
