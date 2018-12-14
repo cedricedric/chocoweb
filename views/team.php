@@ -1,3 +1,8 @@
+<?php 
+     require_once("controllers/Team.php");
+     $team = new Team();
+?>
+
  <!-- TEAM -->
      <section id="team" data-stellar-background-ratio="0.5">
           <div class="container">
@@ -9,63 +14,28 @@
                               <h4>They are nice &amp; friendly</h4>
                          </div>
                     </div>
-
+               <?php foreach ($team->chefs as $chef): ?>
                     <div class="col-md-4 col-sm-4">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-                              <img src="images/team-image1.jpg" class="img-responsive" alt="">
+                              <img src="<?= $chef->img; ?>" class="img-responsive" alt="">
                                    <div class="team-hover">
                                         <div class="team-item">
-                                             <h4>Duis vel lacus id magna mattis vehicula</h4> 
+                                             <h4><?= $chef->description; ?></h4> 
                                              <ul class="social-icon">
-                                                  <li><a href="#" class="fa fa-linkedin-square"></a></li>
-                                                  <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                             <?php foreach ($chef->networks as $network): ?>
+                                                  <li><a href="<?= $network->url; ?>" class="fa fa-<?= $network->network; ?>"></a></li>
+                                             <?php endforeach; ?>
+                                                 
                                              </ul>
                                         </div>
                                    </div>
                          </div>
                          <div class="team-info">
-                              <h3>New Catherine</h3>
-                              <p>Kitchen Officer</p>
+                              <h3><?= $chef->name; ?></h3>
+                              <p><?= $chef->job ?></p>
                          </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                              <img src="images/team-image2.jpg" class="img-responsive" alt="">
-                                   <div class="team-hover">
-                                        <div class="team-item">
-                                             <h4>Cras suscipit neque quis odio feugiat</h4>
-                                             <ul class="social-icon">
-                                                  <li><a href="#" class="fa fa-instagram"></a></li>
-                                                  <li><a href="#" class="fa fa-flickr"></a></li>
-                                             </ul>
-                                        </div>
-                                   </div>
-                         </div>
-                         <div class="team-info">
-                              <h3>Lindsay Perlen</h3>
-                              <p>Owner &amp; Manager</p>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
-                              <img src="images/team-image3.jpg" class="img-responsive" alt="">
-                                   <div class="team-hover">
-                                        <div class="team-item">
-                                             <h4>Etiam auctor enim tristique faucibus</h4>
-                                             <ul class="social-icon">
-                                                  <li><a href="#" class="fa fa-github"></a></li>
-                                                  <li><a href="#" class="fa fa-google"></a></li>
-                                             </ul>
-                                        </div>
-                                   </div>
-                         </div>
-                         <div class="team-info">
-                              <h3>Isabella Grace</h3>
-                              <p>Pizza Specialist</p>
-                         </div>
-                    </div>
+               <?php endforeach; ?>
                     
                </div>
           </div>
