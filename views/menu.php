@@ -14,28 +14,28 @@
                               <h4>Tea Time &amp; Dining</h4>
                          </div>
                     </div>
-               <?php foreach ($choco->menus as $choco): ?>
+               <?php foreach ($choco->menus as $choc): ?>
                     <div class="col-md-4 col-sm-6">
                          <!-- MENU THUMB -->
                     
                          <div class="menu-thumb">
                               <a href="#" class="image-popup" title="American Breakfast">
-                                   <img src="<?= $choco->$src; ?>" class="img-responsive" alt="<?= $choco->alt; ?>">
+                                   <img src="<?= $choc->src; ?>" class="img-responsive" alt="<?= $choc->alt; ?>">
 
                                    <div class="menu-info">
                                         <div class="menu-item">
-                                             <h3><?=$choco->name; ?></h3>
+                                             <h3><?= $choc->name; ?></h3>
                                              <p>Tomato / Eggs / Sausage</p>
                                         </div>
                                         <div class="menu-price">
-                                             <span><?=$choco->price; ?></span>
+                                             <span><?= $choc->price; ?></span>
                                         </div>
                                    </div>
                               </a>
                          </div>
-                    <?php endforeach; ?>
+                    
                     </div>
-
+               <?php endforeach; ?>
                     
 
                </div>

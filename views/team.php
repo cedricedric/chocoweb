@@ -17,7 +17,7 @@
                <?php foreach ($team->chefs as $chef): ?>
                     <div class="col-md-4 col-sm-4">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-                              <img src="<?= $chef->img; ?>" class="img-responsive" alt="">
+                              <img src="<?= $chef->src; ?>" class="img-responsive" alt="">
                                    <div class="team-hover">
                                         <div class="team-item">
                                              <h4><?= $chef->description; ?></h4> 
